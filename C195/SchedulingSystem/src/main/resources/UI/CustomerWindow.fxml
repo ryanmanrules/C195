@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerController">
+    <!-- Title -->
+    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Customer Management" />
+   <TableView fx:id="customerTable1" layoutX="10.0" layoutY="257.0" prefHeight="372.0" prefWidth="811.0">
+      <columns>
+         <TableColumn fx:id="customerIdColumn1" prefWidth="100" text="Customer ID" />
+         <TableColumn fx:id="customerNameColumn1" prefWidth="150" text="Name" />
+         <TableColumn fx:id="addressColumn1" prefWidth="150" text="Address" />
+         <TableColumn fx:id="postalCodeColumn1" prefWidth="100" text="Postal Code" />
+         <TableColumn fx:id="phoneColumn1" prefWidth="120" text="Phone" />
+         <TableColumn fx:id="divisionColumn1" prefWidth="120" text="Division" />
+      </columns>
+   </TableView>
+
+    <!-- Form Fields -->
+    <GridPane hgap="10" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" />
+         <ColumnConstraints />
+        </columnConstraints>
+
+        <Label text="Customer Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="customerNameField" promptText="Enter customer name" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="addressField" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label text="Postal Code:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="postalCodeField" promptText="Enter postal code" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="phoneField" promptText="Enter phone number" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <Label text="Division:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <ComboBox fx:id="divisionComboBox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+      <rowConstraints>
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+         <RowConstraints />
+      </rowConstraints>
+    </GridPane>
+     <Button fx:id="addButton" onAction="#addCustomer" text="Add Customer" />
+     <Button fx:id="deleteButton" onAction="#deleteCustomer" text="Delete Customer" />
+     <Button fx:id="updateButton" onAction="#updateCustomer" text="Update Customer" />
+
+    <!-- Buttons for CRUD Actions -->
+    <HBox alignment="CENTER" spacing="10" />
+</VBox>
